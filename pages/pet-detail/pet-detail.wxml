@@ -1,0 +1,21 @@
+<view class="pet-detail-page">
+  <view class="pet-header">
+    <view class="pet-avatar">{{getPetEmoji(pet.type)}}</view>
+    <view class="pet-info">
+      <view class="pet-name">{{pet.name}}</view>
+      <view class="pet-meta">{{pet.breed}} · {{pet.gender === 'male' ? '♂ 公' : '♀ 母'}}</view>
+    </view>
+    <view class="edit-btn" bindtap="editPet">编辑</view>
+  </view>
+
+  <view class="info-card">
+    <view class="info-row"><span class="label">体重</span><span class="value">{{pet.weight || '-'}} kg</span></view>
+    <view class="info-row"><span class="label">生日</span><span class="value">{{pet.birthday || '-'}}</span></view>
+    <view class="info-row"><span class="label">绝育</span><span class="value">{{pet.neutered ? '是' : '否'}}</span></view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">健康记录</view>
+    <view class="empty-hint">暂无健康记录</view>
+  </view>
+</view>

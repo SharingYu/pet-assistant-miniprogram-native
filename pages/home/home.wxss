@@ -1,0 +1,81 @@
+.home-page { padding: 16px; }
+
+.pet-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.pet-card {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 100px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-right: 12px;
+}
+
+.pet-avatar { font-size: 40px; margin-bottom: 8px; }
+.pet-name { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 4px; }
+.pet-breed { font-size: 12px; color: #999; }
+
+.add-card { border: 2px dashed #ddd; background: #fafafa; }
+.add-icon { font-size: 32px; color: #FF9500; margin-bottom: 4px; }
+.add-text { font-size: 12px; color: #FF9500; }
+
+.quick-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.action-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 8px;
+  text-align: center;
+  margin: 0 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.action-icon { font-size: 24px; margin-bottom: 6px; }
+.action-text { font-size: 12px; color: #666; }
+
+.section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 12px; padding: 0 12px; }
+
+.reminder-list { background: #fff; border-radius: 12px; overflow: hidden; }
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reminder-item:last-child { border-bottom: none; }
+
+.reminder-icon { font-size: 20px; margin-right: 12px; }
+.reminder-content { flex: 1; }
+.reminder-title { font-size: 14px; color: #333; }
+.reminder-meta { font-size: 12px; color: #999; margin-top: 2px; }
+
+.reminder-action { 
+  width: 24px; height: 24px; 
+  border: 2px solid #FF9500; 
+  border-radius: 50%; 
+  color: #FF9500; 
+  font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.empty-state { text-align: center; padding: 40px 20px; }
+.empty-icon { font-size: 64px; margin-bottom: 16px; }
+.empty-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px; }
+.empty-desc { font-size: 14px; color: #999; }

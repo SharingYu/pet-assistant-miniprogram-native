@@ -1,0 +1,49 @@
+<view class="add-pet-page">
+  <view class="form-card">
+    <view class="form-item">
+      <label>宠物名称</label>
+      <input value="{{form.name}}" bindinput="onNameChange" placeholder="请输入宠物名称" />
+    </view>
+
+    <view class="form-item">
+      <label>宠物类型</label>
+      <view class="type-selector">
+        <view class="type-btn {{form.type === 'dog' ? 'active' : ''}}" bindtap="selectType" data-type="dog">🐕 狗</view>
+        <view class="type-btn {{form.type === 'cat' ? 'active' : ''}}" bindtap="selectType" data-type="cat">🐱 猫</view>
+        <view class="type-btn {{form.type === 'other' ? 'active' : ''}}" bindtap="selectType" data-type="other">🐰 其他</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <label>品种</label>
+      <input value="{{form.breed}}" bindinput="onBreedChange" placeholder="如：金毛、英短等" />
+    </view>
+
+    <view class="form-item">
+      <label>生日</label>
+      <picker mode="date" value="{{form.birthday}}" bindchange="onBirthdayChange">
+        <view class="picker-value">{{form.birthday || '请选择'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <label>体重 (kg)</label>
+      <input value="{{form.weight}}" bindinput="onWeightChange" type="digit" placeholder="如：10.5" />
+    </view>
+
+    <view class="form-item">
+      <label>性别</label>
+      <view class="type-selector">
+        <view class="type-btn {{form.gender === 'male' ? 'active' : ''}}" bindtap="selectGender" data-gender="male">♂ 公</view>
+        <view class="type-btn {{form.gender === 'female' ? 'active' : ''}}" bindtap="selectGender" data-gender="female">♀ 母</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <label>是否已绝育</label>
+      <switch checked="{{form.neutered}}" bindchange="onNeuteredChange" color="#FF9500" />
+    </view>
+
+    <button class="btn-submit" bindtap="savePet">保存</button>
+  </view>
+</view>

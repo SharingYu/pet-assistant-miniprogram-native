@@ -1,0 +1,40 @@
+<view class="community-page">
+  <!-- Tab切换 -->
+  <view class="feed-tabs">
+    <view class="tab {{activeTab === 'hot' ? 'active' : ''}}" bindtap="switchTab" data-tab="hot">🔥 热门</view>
+    <view class="tab {{activeTab === 'new' ? 'active' : ''}}" bindtap="switchTab" data-tab="new">✨ 最新</view>
+  </view>
+
+  <!-- 帖子列表 -->
+  <scroll-view scroll-y="true" style="height: calc(100vh - 100px);">
+    <view class="post-list">
+      <view class="post-card" wx:for="{{posts}}" wx:key="id" bindtap="viewPost" data-id="{{item.id}}">
+        <view class="post-header">
+          <view class="post-avatar">{{item.petType === 'dog' ? '🐕' : item.petType === 'cat' ? '🐱' : '🐰'}}</view>
+          <view class="post-user">
+            <view class="post-nickname">{{item.nickname}}</view>
+            <view class="post-pet">{{item.petName}}</view>
+          </view>
+          <view class="post-time">{{formatTime(item.createdAt)}}</view>
+        </view>
+        <view class="post-content">{{item.content}}</view>
+        <view class="post-images" wx:if="{{item.images && item.images.length > 0}}">
+          <image wx:for="{{item.images}}" wx:for-index="idx" wx:key="idx" src="{{item}}" mode="aspectFill" class="post-img"></image>
+        </view>
+        <view class="post-actions">
+          <view class="action-item" bindtap="likePost" data-id="{{item.id}}">
+            <text>{{item.liked ? '❤️' : '🤍'}}</text>
+            <text>{{item.likes || 0}}</text>
+          </view>
+          <view class="action-item" bindtap="commentPost" data-id="{{item.id}}">
+            <text>💬</text>
+            <text>{{item.comments || 0}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 发帖按钮 -->
+  <view class="fab" bindtap="showPostModal">+</view>
+</view>

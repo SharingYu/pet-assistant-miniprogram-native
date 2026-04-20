@@ -1,0 +1,77 @@
+.diagnosis-page { padding: 16px; }
+
+.step-title { font-size: 20px; font-weight: 600; color: #333; margin-bottom: 20px; text-align: center; }
+
+.pet-select-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+.pet-select-card {
+  width: 30%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.pet-select-card .pet-avatar { font-size: 40px; margin-bottom: 8px; }
+.pet-select-card .pet-name { font-size: 14px; font-weight: 600; color: #333; }
+.pet-select-card.empty { border: 2px dashed #ddd; }
+.pet-select-card.empty .add-icon { font-size: 32px; color: #FF9500; }
+.pet-select-card.empty .add-text { font-size: 12px; color: #FF9500; }
+
+.type-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+.type-card {
+  width: 45%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.type-card .type-icon { font-size: 32px; margin-bottom: 8px; }
+.type-card .type-name { font-size: 16px; font-weight: 600; color: #333; }
+.type-card .type-desc { font-size: 12px; color: #999; margin-top: 4px; }
+
+.upload-zone {
+  background: #fff;
+  border: 2px dashed #ddd;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-hint .upload-icon { font-size: 48px; margin-bottom: 12px; }
+.upload-hint .upload-text { font-size: 16px; color: #333; margin-bottom: 8px; }
+.upload-hint .upload-sub { font-size: 12px; color: #999; }
+
+.preview-img { width: 100%; max-height: 300px; }
+
+.btn-row { display: flex; gap: 12px; margin-top: 20px; }
+.btn-primary { flex: 1; background: #FF9500; color: #fff; border: none; border-radius: 24px; padding: 14px; font-size: 16px; }
+.btn-secondary { flex: 1; background: #fff; color: #FF9500; border: 2px solid #FF9500; border-radius: 24px; padding: 14px; font-size: 16px; }
+.btn-disabled { background: #ddd; color: #999; border: none; border-radius: 24px; padding: 14px; font-size: 16px; }
+.btn-back { width: 100%; background: #f5f5f5; color: #666; border: none; border-radius: 24px; padding: 14px; font-size: 14px; margin-top: 12px; }
+
+.loading-state { text-align: center; padding: 60px 20px; }
+.loading-icon { font-size: 64px; margin-bottom: 20px; }
+.loading-text { font-size: 18px; font-weight: 600; color: #333; }
+.loading-sub { font-size: 14px; color: #999; margin-top: 8px; }
+
+.result { background: #fff; border-radius: 16px; padding: 20px; }
+
+.severity-tag { display: inline-block; padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+.severity-green { background: #E6F7E6; color: #52C41A; }
+.severity-yellow { background: #FFFBE6; color: #FAAD14; }
+.severity-red { background: #FFE6E6; color: #FF4D4F; }
+
+.result-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+
+.result-section { margin-top: 16px; }
+.result-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 8px; }
+.result-list { font-size: 14px; color: #666; line-height: 1.8; }
+.result-text { font-size: 14px; color: #666; line-height: 1.8; }

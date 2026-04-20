@@ -1,0 +1,17 @@
+.pet-detail-page { padding: 16px; }
+
+.pet-header { background: #fff; border-radius: 16px; padding: 20px; display: flex; align-items: center; margin-bottom: 16px; }
+.pet-avatar { font-size: 56px; margin-right: 16px; }
+.pet-info { flex: 1; }
+.pet-name { font-size: 20px; font-weight: 700; color: #333; }
+.pet-meta { font-size: 14px; color: #999; margin-top: 4px; }
+.edit-btn { color: #FF9500; font-size: 14px; }
+
+.info-card { background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+.info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f5; }
+.info-row:last-child { border-bottom: none; }
+.info-row .label { color: #999; font-size: 14px; }
+.info-row .value { color: #333; font-size: 14px; }
+
+.section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 12px; }
+.empty-hint { background: #fff; border-radius: 12px; padding: 30px; text-align: center; color: #999; font-size: 14px; }

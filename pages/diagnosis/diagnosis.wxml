@@ -1,0 +1,77 @@
+<view class="diagnosis-page">
+  <!-- Step 1: 选择宠物 -->
+  <view class="step-section" wx:if="{{step === 1}}">
+    <view class="step-title">选择宠物</view>
+    <view class="pet-select-grid">
+      <view class="pet-select-card" wx:for="{{pets}}" wx:key="id" bindtap="selectPet" data-id="{{item.id}}">
+        <view class="pet-avatar">{{item.type === 'dog' ? '🐕' : item.type === 'cat' ? '🐱' : '🐰'}}</view>
+        <view class="pet-name">{{item.name}}</view>
+      </view>
+      <view class="pet-select-card empty" bindtap="goAddPet">
+        <view class="add-icon">+</view>
+        <view class="add-text">添加宠物</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Step 2: 选择诊断类型 -->
+  <view class="step-section" wx:if="{{step === 2}}">
+    <view class="step-title">选择诊断类型</view>
+    <view class="type-grid">
+      <view class="type-card" wx:for="{{types}}" wx:key="id" bindtap="selectType" data-id="{{item.id}}">
+        <view class="type-icon">{{item.icon}}</view>
+        <view class="type-name">{{item.name}}</view>
+        <view class="type-desc">{{item.desc}}</view>
+      </view>
+    </view>
+    <view class="btn-back" bindtap="goBack">返回</view>
+  </view>
+
+  <!-- Step 3: 上传图片 -->
+  <view class="step-section" wx:if="{{step === 3}}">
+    <view class="step-title">上传图片</view>
+    <view class="upload-zone" bindtap="chooseImage">
+      <view wx:if="{{!imageSrc}}" class="upload-hint">
+        <view class="upload-icon">📷</view>
+        <view class="upload-text">点击上传图片</view>
+        <view class="upload-sub">建议拍摄清晰的照片以便AI分析</view>
+      </view>
+      <image wx:else src="{{imageSrc}}" mode="aspectFit" class="preview-img"></image>
+    </view>
+    <view class="btn-row">
+      <button class="btn-primary {{imageSrc ? '' : 'btn-disabled'}}" bindtap="submitDiagnosis" disabled="{{!imageSrc}}">提交诊断</button>
+    </view>
+    <view class="btn-back" bindtap="goBack">返回</view>
+  </view>
+
+  <!-- Step 4: AI分析中 -->
+  <view class="step-section" wx:if="{{step === 4}}">
+    <view class="loading-state">
+      <view class="loading-icon">🔬</view>
+      <view class="loading-text">AI 正在分析中...</view>
+      <view class="loading-sub">请稍候，预计需要10-30秒</view>
+    </view>
+  </view>
+
+  <!-- Step 5: 查看结果 -->
+  <view class="step-section result" wx:if="{{step === 5}}">
+    <view class="severity-tag severity-{{result.severity}}">{{result.severityLabel}}</view>
+    <view class="result-tags">
+      <text class="tag" wx:for="{{result.tags}}" wx:key="index">{{item}}</text>
+    </view>
+    <view class="result-section">
+      <view class="result-title">可能原因</view>
+      <view class="result-list">
+        <text wx:for="{{result.causes}}" wx:key="index">{{index + 1}}. {{item}}\n</text>
+      </view>
+    </view>
+    <view class="result-section">
+      <view class="result-title">建议</view>
+      <view class="result-text">{{result.suggestion}}</view>
+    </view>
+    <view class="btn-row">
+      <button class="btn-primary" bindtap="saveResult">保存结果</button>
+      <button class="btn-secondary" bindtap="reset">重新诊断</button>
+    </view>
+  </view>
+</view>

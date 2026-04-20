@@ -1,0 +1,38 @@
+.add-pet-page { padding: 16px; }
+
+.form-card { background: #fff; border-radius: 16px; padding: 20px; }
+
+.form-item { margin-bottom: 20px; }
+.form-item label { display: block; font-size: 14px; color: #333; font-weight: 500; margin-bottom: 8px; }
+.form-item input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.type-selector { display: flex; gap: 12px; }
+.type-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.type-btn.active { border-color: #FF9500; background: #FFF3E0; color: #FF9500; }
+
+.picker-value { padding: 12px; border: 1px solid #ddd; border-radius: 8px; color: #999; }
+
+.btn-submit {
+  width: 100%;
+  background: #FF9500;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 14px;
+  font-size: 16px;
+  margin-top: 10px;
+}

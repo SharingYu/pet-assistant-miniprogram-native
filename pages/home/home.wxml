@@ -1,0 +1,56 @@
+<view class="home-page">
+  <!-- 宠物卡片轮播 -->
+  <scroll-view class="pet-scroll" scroll-x="true">
+    <view class="pet-card" wx:for="{{pets}}" wx:key="id" bindtap="goPetDetail" data-id="{{item.id}}">
+      <view class="pet-avatar">{{getPetEmoji(item.type)}}</view>
+      <view class="pet-name">{{item.name}}</view>
+      <view class="pet-breed">{{item.breed || '未知'}}</view>
+    </view>
+    <view class="pet-card add-card" bindtap="goAddPet">
+      <view class="add-icon">+</view>
+      <view class="add-text">添加宠物</view>
+    </view>
+  </scroll-view>
+
+  <!-- 快捷入口 -->
+  <view class="quick-actions">
+    <view class="action-card" bindtap="switchTab" data-tab="diagnosis">
+      <view class="action-icon">🔬</view>
+      <view class="action-text">AI诊断</view>
+    </view>
+    <view class="action-card" bindtap="goRecord">
+      <view class="action-icon">📋</view>
+      <view class="action-text">健康记录</view>
+    </view>
+    <view class="action-card" bindtap="switchTab" data-tab="community">
+      <view class="action-icon">🌟</view>
+      <view class="action-text">宠友圈</view>
+    </view>
+    <view class="action-card" bindtap="switchTab" data-tab="reminders">
+      <view class="action-icon">⏰</view>
+      <view class="action-text">提醒</view>
+    </view>
+  </view>
+
+  <!-- 近期提醒 -->
+  <view class="section" wx:if="{{upcomingReminders.length > 0}}">
+    <view class="section-title">近期提醒</view>
+    <view class="reminder-list">
+      <view class="reminder-item" wx:for="{{upcomingReminders}}" wx:key="id" bindtap="completeReminder" data-id="{{item.id}}">
+        <view class="reminder-icon">{{getReminderIcon(item.type)}}</view>
+        <view class="reminder-content">
+          <view class="reminder-title">{{item.title}}</view>
+          <view class="reminder-meta">{{item.petName}} · {{formatDate(item.date)}}</view>
+        </view>
+        <view class="reminder-action" wx:if="{{!item.done}}">✓</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{pets.length === 0}}">
+    <view class="empty-icon">🐾</view>
+    <view class="empty-title">还没有宠物</view>
+    <view class="empty-desc">点击上方添加按钮，添加您的毛孩子</view>
+  </view>
+</view>

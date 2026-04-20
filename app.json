@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/diagnosis/diagnosis",
+    "pages/community/community",
+    "pages/reminders/reminders",
+    "pages/pet-detail/pet-detail",
+    "pages/add-pet/add-pet"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FF9500",
+    "navigationBarTitleText": "毛孩子健康助手",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF9500",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {"pagePath": "pages/home/home", "text": "首页", "iconPath": "static/tab-home.png", "selectedIconPath": "static/tab-home-active.png"},
+      {"pagePath": "pages/diagnosis/diagnosis", "text": "AI诊断", "iconPath": "static/tab-diagnosis.png", "selectedIconPath": "static/tab-diagnosis-active.png"},
+      {"pagePath": "pages/community/community", "text": "社区", "iconPath": "static/tab-community.png", "selectedIconPath": "static/tab-community-active.png"},
+      {"pagePath": "pages/reminders/reminders", "text": "提醒", "iconPath": "static/tab-reminder.png", "selectedIconPath": "static/tab-reminder-active.png"}
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
