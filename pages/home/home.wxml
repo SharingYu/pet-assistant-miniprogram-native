@@ -1,6 +1,6 @@
 <view class="home-page">
   <!-- 宠物卡片轮播 -->
-  <scroll-view class="pet-scroll" scroll-x="true">
+  <scroll-view class="pet-scroll" scroll-x="true" enable-flex="true">
     <view class="pet-card" wx:for="{{pets}}" wx:key="id" bindtap="goPetDetail" data-id="{{item.id}}">
       <view class="pet-avatar">{{getPetEmoji(item.type)}}</view>
       <view class="pet-name">{{item.name}}</view>

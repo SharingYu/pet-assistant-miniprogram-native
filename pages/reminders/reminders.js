@@ -6,13 +6,10 @@ const STORAGE_KEYS = {
 Page({
   data: {
     reminders: [],
-    pets: []
-  },
-
-  computed: {
-    pendingCount() { return this.data.reminders.filter(r => !r.done).length },
-    doneCount() { return this.data.reminders.filter(r => r.done).length },
-    petsCount() { return this.data.pets.length }
+    pets: [],
+    pendingCount: 0,
+    doneCount: 0,
+    petsCount: 0
   },
 
   onLoad() { this.loadData() },
@@ -21,16 +18,12 @@ Page({
   loadData() {
     const reminders = wx.getStorageSync(STORAGE_KEYS.REMINDERS) || []
     const pets = wx.getStorageSync(STORAGE_KEYS.PETS) || []
-    this.setData({ reminders, pets })
-    this.updateComputed()
-  },
-
-  updateComputed() {
-    const reminders = this.data.reminders
     this.setData({
+      reminders,
+      pets,
       pendingCount: reminders.filter(r => !r.done).length,
       doneCount: reminders.filter(r => r.done).length,
-      petsCount: this.data.pets.length
+      petsCount: pets.length
     })
   },
 
