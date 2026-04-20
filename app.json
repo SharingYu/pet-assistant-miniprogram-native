@@ -4,6 +4,7 @@
     "pages/diagnosis/diagnosis",
     "pages/community/community",
     "pages/reminders/reminders",
+    "pages/settings/settings",
     "pages/pet-detail/pet-detail",
     "pages/add-pet/add-pet"
   ],

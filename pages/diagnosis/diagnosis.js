@@ -24,6 +24,11 @@ Page({
     this.loadPets()
   },
 
+  onShow() {
+    // 每次显示页面时重新加载宠物数据（解决添加宠物后不显示的问题）
+    this.loadPets()
+  },
+
   loadPets() {
     const pets = wx.getStorageSync(STORAGE_KEY) || []
     this.setData({ pets })
@@ -66,15 +71,14 @@ Page({
     if (!this.data.imageSrc) return
     this.setData({ step: 4 })
     
-    // 模拟AI诊断
     setTimeout(() => {
       const severities = ['green', 'yellow', 'red']
-      const severities2 = ['🟢 居家观察', '🟡 建议就医', '🔴 立即就医']
+      const severityLabels = ['🟢 居家观察', '🟡 建议就医', '🔴 立即就医']
       const idx = Math.floor(Math.random() * 3)
       this.setData({
         result: {
           severity: severities[idx],
-          severityLabel: severities2[idx],
+          severityLabel: severityLabels[idx],
           tags: ['轻度瘙痒', '皮肤泛红'],
           causes: ['可能是轻微皮肤过敏', '建议观察2-3天'],
           suggestion: '保持皮肤清洁，避免抓挠。如持续不缓解，建议就医。'

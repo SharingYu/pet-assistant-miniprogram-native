@@ -67,6 +67,10 @@ Page({
     
     wx.setStorageSync(STORAGE_KEY, pets)
     wx.showToast({ title: '保存成功', icon: 'success' })
-    setTimeout(() => wx.navigateBack(), 1000)
+    
+    // 延迟返回，让用户看到保存成功的提示
+    setTimeout(() => {
+      wx.navigateBack()
+    }, 1200)
   }
 })

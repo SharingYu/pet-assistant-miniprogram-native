@@ -35,6 +35,10 @@ Page({
     wx.navigateTo({ url: '/pages/add-pet/add-pet' })
   },
 
+  goSettings() {
+    wx.navigateTo({ url: '/pages/settings/settings' })
+  },
+
   switchTab(e) {
     const tab = e.currentTarget.dataset.tab
     if (tab === 'diagnosis') wx.switchTab({ url: '/pages/diagnosis/diagnosis' })

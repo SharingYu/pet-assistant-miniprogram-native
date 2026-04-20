@@ -11,20 +11,21 @@
   border-radius: 8px;
   font-size: 14px;
   box-sizing: border-box;
+  background: #fff;
 }
 
 .type-selector { display: flex; gap: 12px; }
 .type-btn {
   flex: 1;
-  padding: 12px;
+  padding: 12px 8px;
   text-align: center;
   border: 2px solid #ddd;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
 }
 .type-btn.active { border-color: #FF9500; background: #FFF3E0; color: #FF9500; }
 
-.picker-value { padding: 12px; border: 1px solid #ddd; border-radius: 8px; color: #999; }
+.picker-value { padding: 12px; border: 1px solid #ddd; border-radius: 8px; color: #999; background: #fff; }
 
 .btn-submit {
   width: 100%;
